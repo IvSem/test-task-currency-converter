@@ -1,0 +1,17 @@
+<div class="relative min-h-full flex flex-col overflow-hidden bg-slate-400">
+  <app-top-bar [uahToUsd]="uahToUsd" [uahToEur]="uahToEur"></app-top-bar>
+  <main class="flex-auto">
+    <app-currency-converter></app-currency-converter>
+  </main>
+  <footer class="bg-green-300">
+    <div class="text-center py-2">
+      Made by
+      <a
+        class="font-bold leading-5 inline-block text-blue-500 relative before:block before:absolute before:bottom-0 before:left-1/2 before:w-[0px] before:h-[2px] before:bg-pink-500 before:duration-300 hover:before:w-full hover:before:left-0"
+        href="https://github.com/IvSem"
+        target="_blank"
+        >Ivan Sumenko</a
+      >
+    </div>
+  </footer>
+</div>

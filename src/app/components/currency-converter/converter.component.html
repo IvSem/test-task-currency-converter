@@ -1,0 +1,52 @@
+<section
+  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[90vw] sm:min-w-[70vw] md:min-w-[60vw] lg:min-w-[50vw]"
+>
+  <div
+    class="flex flex-col justify-center items-center gap-y-3 rounded-2xl shadow-md bg-violet-400 p-3 md:p-10"
+  >
+    <h2 class="text-2xl uppercase font-bold text-white">Converter</h2>
+    <p class="text-center text-lg font-semibold text-yellow-200">
+      {{ amount }}-{{ baseCurrency }} = {{ convertedAmount }}-{{
+        targetCurrency
+      }}
+    </p>
+    <div class="md:flex gap-x-3">
+      <div class="flex mb-2 md:mb-0">
+        <input
+          id="value1"
+          class="block bg-gray-50 border hover:shadow-lg font-medium transition-all pl-3 border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full"
+          type="number"
+          [(ngModel)]="amount"
+          (input)="changeInput('1')"
+        />
+        <select
+          [(ngModel)]="baseCurrency"
+          class="overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 cursor-pointer"
+          (change)="changeInput('3')"
+        >
+          <option *ngFor="let currency of currencies" [value]="currency">
+            {{ currency }}
+          </option>
+        </select>
+      </div>
+
+      <div class="flex">
+        <input
+          class="block bg-gray-50 border hover:shadow-lg font-medium transition-all pl-3 border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full"
+          type="number"
+          [(ngModel)]="convertedAmount"
+          (input)="changeInput('2')"
+        />
+        <select
+          [(ngModel)]="targetCurrency"
+          (change)="changeInput('4')"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 cursor-pointer"
+        >
+          <option *ngFor="let currency of currencies" [value]="currency">
+            {{ currency }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
